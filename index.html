@@ -24,19 +24,65 @@
             min-height: 100vh;
             padding: 20px;
             font-family: 'Public Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 420px;
         }
 
         .card-container {
             background-color: #fce136;
             width: 100%;
-            max-width: 420px;
             padding: 40px 25px;
             border: 4px solid #000000;
             box-shadow: 12px 12px 0px #000000;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Profile Section */
+        .side-ribbon {
+            background-color: #fce136;
+            border: 4px solid #000000; 
+            box-shadow: 8px 8px 0px #000000; 
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .ribbon-left {
+            left: 25%;
+        }
+
+        .ribbon-right {
+            right: 25%;
+        }
+
+        .side-ribbon span {
+            font-family: 'Lexend Mega', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #000000;
+            writing-mode: vertical-rl;
+            white-space: nowrap;
+            letter-spacing: 4px;
+            display: inline-block;
+        }
+
+        .ribbon-left span {
+            transform: rotate(180deg); 
+        }
+
         .avatar-container {
             position: relative;
             width: 110px;
@@ -110,25 +156,41 @@
         .btn-orange { background-color: #ffaa3b; }
         .btn-green { background-color: #00ff75; }
 
+        @media (max-width: 1024px) {
+            .side-ribbon {
+                display: none;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="card-container">
-        <div class="avatar-container">
-            <img src="https://github.com/kongiotakos.png" alt="Avatar" class="profile-img">
-        </div>
-        
-        <h1>KONSTANTINOS GIOTAKOS</h1>
-        <p class="bio">Computer Science student at AUTh</p>
+    <div class="side-ribbon ribbon-left">
+        <span>KGIOTAKOS.COM</span>
+    </div>
 
-        <div class="links-wrapper">
-            <a href="https://www.instagram.com/kgiotakos/" class="link-btn btn-red" target="_blank">INSTAGRAM 📸</a>
-            <a href="https://github.com/kongiotakos" class="link-btn btn-blue" target="_blank">GITHUB 🌐</a>
-            <a href="https://www.youtube.com/watch?v=quxTnEEETbo" class="link-btn btn-purple" target="_blank">MUSIC 🎶</a>
-            <a href="https://buymeacoffee.com/" class="link-btn btn-orange" target="_blank">BUY ME A COFFEE ☕</a>
-            <a href="mailto:kgiotakos@gmail.com" class="link-btn btn-green">EMAIL 📫</a>
+    <div class="main-wrapper">
+        <div class="card-container">
+            <div class="avatar-container">
+                <img src="https://github.com/kongiotakos.png" alt="Avatar" class="profile-img">
+            </div>
+            
+            <h1>KONSTANTINOS GIOTAKOS</h1>
+            <p class="bio">Computer Science student at AUTh</p>
+
+            <div class="links-wrapper">
+                <a href="https://www.instagram.com/kgiotakos/" class="link-btn btn-red" target="_blank">INSTAGRAM 📸</a>
+                <a href="https://github.com/kongiotakos" class="link-btn btn-blue" target="_blank">GITHUB 🌐</a>
+                <a href="https://kgiotakos.itch.io/melirun" class="link-btn btn-purple" target="_blank">MELIRUN 🍯</a>
+                <a href="https://buymeacoffee.com/" class="link-btn btn-orange" target="_blank">BUY ME A COFFEE ☕</a>
+                <a href="mailto:kgiotakos@gmail.com" class="link-btn btn-green">EMAIL 📫</a>
+            </div>
         </div>
+    </div>
+
+    <div class="side-ribbon ribbon-right">
+        <span>PORTFOLIO 2026</span>
     </div>
 
 </body>
