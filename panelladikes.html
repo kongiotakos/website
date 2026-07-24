@@ -108,7 +108,6 @@
             letter-spacing: -1px;
         }
 
-        /* ΕΝΙΑΙΟ STYLE ΓΙΑ ΤΙΣ ΓΡΑΜΜΕΣ ΚΕΙΜΕΝΟΥ */
         .bio {
             font-size: 0.95rem;
             font-weight: 600;
@@ -123,7 +122,6 @@
             margin-bottom: 25px;
         }
 
-        /* --- CONTAINER ΕΦΗΜΕΡΙΔΑΣ --- */
         .newspaper-container {
             width: 100%;
             height: 450px;
@@ -149,7 +147,6 @@
             transform: scale(4.8);
         }
 
-        /* ΓΡΑΜΜΗ ΠΗΓΗΣ ΣΕ ITALIC & ΧΩΡΙΣ UNDERLINE */
         .source-link {
             display: block;
             font-size: 0.85rem;
@@ -165,7 +162,6 @@
             opacity: 0.7;
         }
 
-        /* ΚΟΥΜΠΙ ΕΠΙΣΤΡΟΦΗΣ */
         .back-btn {
             display: block;
             padding: 16px;
@@ -214,22 +210,19 @@
             <p class="bio"><strong>ΑΡΙΣΤΟΥΧΟΣ</strong> στο Ν. Καρδίτσας</p>
             <p class="bio-sub"><strong>18.35</strong> Μ.Ο. | <strong>18.320</strong> Μόρια</p>
 
-            <!-- ΕΦΗΜΕΡΙΔΑ -->
             <div class="newspaper-container" id="newspaperContainer">
                 <img 
-                    src="aristouxoi.jpg" 
+                    src="aristouxoi.JPG" 
                     alt="Αριστούχοι Ν. Καρδίτσας" 
                     id="newspaperImg"
                     class="newspaper-img"
                 >
             </div>
 
-            <!-- ΠΗΓΗ -->
             <a href="https://neosagon.gr/a27-chamogela-epitychias-apo-tous-aristouchous-ton-gel-tou-n-karditsas-stis-panelladikes/" target="_blank" rel="noopener noreferrer" class="source-link">
                 Πηγή: Νέος Αγώνας 🔗
             </a>
 
-            <!-- ΚΟΥΜΠΙ ΠΙΣΩ -->
             <a href="index.html" class="back-btn">ΠΙΣΩ ⬅️</a>
         </div>
     </div>
@@ -241,18 +234,15 @@
     <script>
         const container = document.getElementById('newspaperContainer');
 
-        // 1. Αυτόματο zoom μετά από 3 δευτερόλεπτα
         const autoZoomTimeout = setTimeout(() => {
             container.classList.add('zoomed');
         }, 3000);
 
-        // 2. Zoom στο Mouse Enter
         container.addEventListener('mouseenter', () => {
             clearTimeout(autoZoomTimeout);
             container.classList.add('zoomed');
         });
 
-        // 3. Επαναφορά στο Mouse Leave
         container.addEventListener('mouseleave', () => {
             container.classList.remove('zoomed');
         });
